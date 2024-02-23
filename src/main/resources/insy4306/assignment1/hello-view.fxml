@@ -8,137 +8,63 @@
 <?import javafx.collections.*?>
 
 <!--    <Button text="Hello!" onAction="#onHelloButtonClick"/>-->
-<!--<GridPane xmlns:fx="http://javafx.com/fxml"-->
-<!--          fx:controller="insy4306.assignment1.HelloController"-->
-<!--          hgap="200" vgap="5">-->
-<!--    <padding>-->
-<!--        <Insets left="10" bottom="10" top="10" right="10"/>-->
-<!--    </padding>-->
-<!--    <columnConstraints>-->
-<!--        <ColumnConstraints percentWidth="50"/>-->
-<!--        <ColumnConstraints percentWidth="50"/>-->
-<!--    </columnConstraints>-->
-
-<!--    &lt;!&ndash;    <HBox GridPane.columnIndex="0" GridPane.rowIndex="0">&ndash;&gt;-->
-<!--    &lt;!&ndash;        <Label text="Name"/>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <TextField alignment="CENTER_RIGHT"/>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </HBox>&ndash;&gt;-->
-<!--    &lt;!&ndash;    <HBox GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2">&ndash;&gt;-->
-<!--    &lt;!&ndash;        <Label text="Street"/>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <TextField alignment="CENTER_RIGHT"/>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </HBox>&ndash;&gt;-->
-
-<!--    <Label text="Name" GridPane.rowIndex="0" GridPane.columnIndex="0"/>-->
-<!--    <TextField GridPane.rowIndex="0" GridPane.columnIndex="2"/>-->
-
-<!--    <Label text="Street" GridPane.rowIndex="1" GridPane.columnIndex="0"/>-->
-<!--    <TextField GridPane.rowIndex="1" GridPane.columnIndex="2"/>-->
-
-<!--    <Label text="City" GridPane.rowIndex="2" GridPane.columnIndex="0"/>-->
-<!--    <TextField GridPane.rowIndex="2" GridPane.columnIndex="2"/>-->
-
-<!--    <Label text="State" GridPane.rowIndex="3" GridPane.columnIndex="0"/>-->
-<!--    <TextField GridPane.rowIndex="3" GridPane.columnIndex="2"/>-->
-
-<!--    <Label text="Zipcode" GridPane.rowIndex="2" GridPane.columnIndex="0"/>-->
-<!--    <TextField GridPane.rowIndex="2" GridPane.columnIndex="2"/>-->
-
-<!--    <Label text="Choose One" GridPane.rowIndex="5" GridPane.columnIndex="0"/>-->
-<!--    <RadioButton GridPane.rowIndex="5" GridPane.columnIndex="2" text="App"/>-->
-<!--    <RadioButton GridPane.rowIndex="5" GridPane.columnIndex="3" text="Music"/>-->
-
-
-<!--    <Label text="Street" GridPane.rowIndex="6" GridPane.columnIndex="0"/>-->
-<!--    <ComboBox GridPane.rowIndex="6" GridPane.columnIndex="2">-->
-<!--        <items>-->
-<!--            <FXCollections fx:factory="observableArrayList">-->
-<!--                <String fx:value="Punk"/>-->
-<!--                <String fx:value="Rock"/>-->
-<!--                <String fx:value="Rap"/>-->
-<!--                <String fx:value="Jazz"/>-->
-<!--                <String fx:value="Ska Punk"/>-->
-<!--            </FXCollections>-->
-<!--        </items>-->
-<!--    </ComboBox>-->
-
-<!--    <Label text="Enter Title" GridPane.rowIndex="7" GridPane.columnIndex="0"/>-->
-<!--    <TextField GridPane.rowIndex="7" GridPane.columnIndex="2"/>-->
-
-<!--    <Label text="Date Purchased" GridPane.rowIndex="8" GridPane.columnIndex="0"/>-->
-<!--    <TextField GridPane.rowIndex="8" GridPane.columnIndex="2"/>-->
-
-<!--    <Label text="Account Number" GridPane.rowIndex="9" GridPane.columnIndex="0"/>-->
-<!--    <TextField GridPane.rowIndex="9" GridPane.columnIndex="2"/>-->
-
-<!--    <Button text="Submit" GridPane.rowIndex="10" GridPane.columnIndex="0"/>-->
-<!--    <Button text="Finish" GridPane.rowIndex="10" GridPane.columnIndex="2"/>-->
-
-
-<!--</GridPane>-->
-
-<!--<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="insy4306.assignment1.HelloController">-->
-<!--    <padding>-->
-<!--        <Insets left="10" bottom="10" top="10" right="10"/>-->
-<!--    </padding>-->
-<!--    <HBox>-->
-<!--        <Label text="Name" HBox.hgrow="ALWAYS"/>-->
-<!--        <TextField fx:id="nameTextField" HBox.hgrow="ALWAYS"/>-->
-<!--    </HBox>-->
-<!--</VBox>-->
-
-<VBox xmlns:fx="https://javafx.com/fxml" fx:controller="insy4306.assignment1.HelloController">
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="insy4306.assignment1.HelloController"
+          vgap="10" hgap="50" alignment="BASELINE_CENTER">
     <padding>
-        <Insets left="10" right="10" bottom="10" top="10"/>
+        <Insets left="10" bottom="10" top="10" right="10"/>
     </padding>
 
-    <HBox>
-        <Label text="Name" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="Street" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="City" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="State" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="Zip" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="Choose One" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="Name" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="Name" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="Name" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="Name" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
-    </HBox>
-    <HBox>
-        <Label text="Name" HBox.hgrow="ALWAYS"/>
-        <TextField HBox.hgrow="ALWAYS"/>
+    <Label text="Name" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="Street" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="City" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="State" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Zipcode" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="Choose One" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <HBox GridPane.rowIndex="5" GridPane.columnIndex="1" spacing="20">
+        <CheckBox text="App"/>
+        <CheckBox text="Music"/>
     </HBox>
 
+    <Label text="Type of Music" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <ComboBox GridPane.rowIndex="6" GridPane.columnIndex="1">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Punk"/>
+                <String fx:value="Rock"/>
+                <String fx:value="Rap"/>
+                <String fx:value="Jazz"/>
+                <String fx:value="Ska Punk"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
 
-    <HBox>
-        <Button text="Submit" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
-        <Button text="Finish" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+    <Label text="Type of App" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <HBox GridPane.rowIndex="7" GridPane.columnIndex="1" spacing="15">
+        <RadioButton text="GAME" fx:id="gameButton"/>
+        <RadioButton text="PRODUCTIVITY" fx:id="prodButton"/>
+        <RadioButton text="EDUCATION" fx:id="eduButton"/>
     </HBox>
-</VBox>
+
+    <Label text="Enter Title" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+    <TextField GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+    <Label text="Date Purchased" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+    <TextField GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+    <Label text="Account Number" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+    <TextField GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+    <Button text="Submit" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+    <Button text="Finish" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+</GridPane>
