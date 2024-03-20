@@ -36,8 +36,8 @@
         <CheckBox fx:id="musicButton" onAction="#handleChooseOne" text="Music"/>
     </HBox>
 
-    <Label text="Type of Music" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
-    <ComboBox GridPane.rowIndex="6" GridPane.columnIndex="1">
+    <Label fx:id="labelTypeMusic" text="Type of Music" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="comboMusicBox" GridPane.rowIndex="6" GridPane.columnIndex="1">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Punk"/>
@@ -47,6 +47,9 @@
                 <String fx:value="Ska Punk"/>
             </FXCollections>
         </items>
+        <value>
+            <String fx:value="CHOOSE ONE"/>
+        </value>
     </ComboBox>
 
     <Label fx:id="labelTypeApp" text="Type of App" GridPane.rowIndex="7" GridPane.columnIndex="0"/>

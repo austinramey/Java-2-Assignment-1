@@ -18,8 +18,10 @@ public class HelloController {
     private CheckBox musicButton;
     @FXML
     private Label labelTypeApp;
-    // @FXML
-    // private ComboBox comboBox;
+    @FXML
+    private Label labelTypeMusic;
+    @FXML
+    private ComboBox<String> comboMusicBox;
 
     @FXML
     public void initialize(){
@@ -28,16 +30,33 @@ public class HelloController {
 
     @FXML
     public void handleChooseOne() {
-        if (appButton.isSelected()) {
+        clearDisabled();
+
+        if(appButton.isSelected()){
+            labelTypeMusic.setStyle("-fx-text-fill: gray");
+            comboMusicBox.setDisable(true);
+            musicButton.setDisable(true);
+        } else if (musicButton.isSelected()) {
             labelTypeApp.setStyle("-fx-text-fill: gray");
             gameButton.setDisable(true);
             prodButton.setDisable(true);
             eduButton.setDisable(true);
+            appButton.setDisable(true);
         } else {
-            labelTypeApp.setStyle("-fx-text-fill: black");
-            gameButton.setDisable(false);
-            prodButton.setDisable(false);
-            eduButton.setDisable(false);
+            clearDisabled();
+            appButton.setDisable(false);
+            musicButton.setDisable(false);
         }
+    }
+
+    @FXML
+    public void clearDisabled(){
+        labelTypeMusic.setStyle("-fx-text-fill: black");
+        comboMusicBox.setDisable(false);
+
+        labelTypeApp.setStyle("-fx-text-fill: black");
+        gameButton.setDisable(false);
+        prodButton.setDisable(false);
+        eduButton.setDisable(false);
     }
 }
