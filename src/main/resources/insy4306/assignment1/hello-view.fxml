@@ -32,8 +32,8 @@
 
     <Label text="Choose One" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
     <HBox GridPane.rowIndex="5" GridPane.columnIndex="1" spacing="20">
-        <CheckBox text="App"/>
-        <CheckBox text="Music"/>
+        <CheckBox fx:id="appButton" onAction="#handleChooseOne" text="App"/>
+        <CheckBox fx:id="musicButton" onAction="#handleChooseOne" text="Music"/>
     </HBox>
 
     <Label text="Type of Music" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
@@ -49,7 +49,7 @@
         </items>
     </ComboBox>
 
-    <Label text="Type of App" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <Label fx:id="labelTypeApp" text="Type of App" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
     <HBox GridPane.rowIndex="7" GridPane.columnIndex="1" spacing="15">
         <RadioButton text="GAME" fx:id="gameButton"/>
         <RadioButton text="PRODUCTIVITY" fx:id="prodButton"/>
