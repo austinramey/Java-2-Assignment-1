@@ -85,16 +85,10 @@ public class HelloController {
     public void handleSubmit(){
         try {
             if(appButton.isSelected()){
-                // Path path = Paths.get("app.txt");
-                // String appOutput = appOutput();
-                // Files.write(path, appOutput.getBytes(), StandardOpenOption.APPEND);
                 FileWriter writer = new FileWriter("app.txt");
                 writer.write(appOutput());
                 writer.close();
             } else if (musicButton.isSelected()) {
-                // Path path = Paths.get("music.txt");
-                // String musicOutput = musicOutput();
-                // Files.write(path, musicOutput.getBytes(), StandardOpenOption.APPEND);
                 FileWriter writer = new FileWriter("music.txt");
                 writer.write(musicOutput());
                 writer.close();
@@ -111,22 +105,21 @@ public class HelloController {
     @FXML
     public String appOutput() {
         String returnString = "";
-        while(errorCheck) {
+        try{
             returnString += checkEmpty(nameField) + " | ";
             returnString += checkEmpty(streetField) + " | ";
             returnString += checkEmpty(cityField) + " | ";
             returnString += checkEmpty(stateField) + " | ";
             returnString += checkEmpty(zipcodeField) + " | ";
+            returnString += appSelection() + " | ";
             returnString += checkEmpty(titleField) + " | ";
             returnString += checkEmpty(dateField) + " | ";
             returnString += checkEmpty(accountField) + " | ";
             returnString += "\n";
-            break;
-        }
-        if(errorCheck) {
-            return returnString;    
-        } else {
-            errorCheck = true;
+            return returnString;
+        } catch (Exception e) {
+            Alert alert = new Alert(AlertType.ERROR, e.getMessage());
+            alert.showAndWait();
             return "";
         }
     }
@@ -134,36 +127,55 @@ public class HelloController {
     @FXML
     public String musicOutput() {
         String returnString = "";
-        while(errorCheck) {
+        try{
             returnString += checkEmpty(nameField) + " | ";
             returnString += checkEmpty(streetField) + " | ";
             returnString += checkEmpty(cityField) + " | ";
             returnString += checkEmpty(stateField) + " | ";
             returnString += checkEmpty(zipcodeField) + " | ";
+            returnString += musicSelection() + " | ";
             returnString += checkEmpty(titleField) + " | ";
             returnString += checkEmpty(dateField) + " | ";
             returnString += checkEmpty(accountField) + " | ";
             returnString += "\n";
-            break;
-        }
-        if(errorCheck) {
-            return returnString;    
-        } else {
-            errorCheck = true;
+            return returnString;
+        } catch (Exception e) {
+            Alert alert = new Alert(AlertType.ERROR, e.getMessage());
+            alert.showAndWait();
             return "";
         }
     }
 
     @FXML
-    public String checkEmpty(TextField textField) {
+    public String checkEmpty(TextField textField) throws Exception {
         if(textField.getText().trim().isEmpty()) {
-            Alert alert = new Alert(AlertType.ERROR, "One of your fields is empty");
-            alert.showAndWait();
             textField.requestFocus();
-            return "";
+            throw new Exception("This field is empty, please fill it in!");
         } else {
-            errorCheck=true;
             return textField.getText();
+        }
+    }
+
+    @FXML
+    public String appSelection() throws Exception {
+        if(gameButton.isSelected()) {
+            return "GAME";
+        } else if (prodButton.isSelected()) {
+            return "PRODUCTIVITY";
+        } else if (eduButton.isSelected()) {
+            return "EDUCATION";
+        } else {
+            throw new Exception("No type of app selected");
+        }
+    }
+
+    @FXML
+    public String musicSelection() throws Exception {
+        switch (comboMusicBox.getSelectionModel().getSelectedItem()) {
+            case "CHOOSE ONE":
+                throw new Exception("No music type selected");
+            default:
+                return comboMusicBox.getSelectionModel().getSelectedItem();
         }
     }
     
