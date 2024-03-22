@@ -83,7 +83,7 @@ public class HelloController {
     public void handleSubmit(){
         try {
             if(appButton.isSelected()){
-                FileWriter writer = new FileWriter("app.txt");
+                FileWriter writer = new FileWriter("app.txt", true);
                 writer.write(appOutput());
                 writer.close();
                 Alert success = new Alert(AlertType.CONFIRMATION, "Sucessfully submitted music!");
@@ -91,7 +91,7 @@ public class HelloController {
                 clearFields();
                 nameField.requestFocus();
             } else if (musicButton.isSelected()) {
-                FileWriter writer = new FileWriter("music.txt");
+                FileWriter writer = new FileWriter("music.txt", true);
                 writer.write(musicOutput());
                 writer.close();
                 Alert success = new Alert(AlertType.CONFIRMATION, "Sucessfully submitted music!");
