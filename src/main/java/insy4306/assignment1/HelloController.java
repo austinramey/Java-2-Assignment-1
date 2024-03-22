@@ -41,8 +41,6 @@ public class HelloController {
     private TextField dateField;
     @FXML
     private TextField accountField;
-    @FXML
-    private boolean errorCheck=true;
 
     @FXML
     public void initialize(){
@@ -88,10 +86,18 @@ public class HelloController {
                 FileWriter writer = new FileWriter("app.txt");
                 writer.write(appOutput());
                 writer.close();
+                Alert success = new Alert(AlertType.CONFIRMATION, "Sucessfully submitted music!");
+                success.showAndWait();
+                clearFields();
+                nameField.requestFocus();
             } else if (musicButton.isSelected()) {
                 FileWriter writer = new FileWriter("music.txt");
                 writer.write(musicOutput());
                 writer.close();
+                Alert success = new Alert(AlertType.CONFIRMATION, "Sucessfully submitted music!");
+                success.showAndWait();
+                clearFields();
+                nameField.requestFocus();
             } else {
                 nameField.requestFocus();
                 Alert alert = new Alert(AlertType.ERROR, "Neither App nor Music Selected!");
@@ -179,6 +185,27 @@ public class HelloController {
         }
     }
     
+    @FXML
+    public void clearFields() {
+        nameField.setText("");
+        streetField.setText("");
+        cityField.setText("");
+        stateField.setText("");
+        zipcodeField.setText("");
+        titleField.setText("");
+        dateField.setText("");
+        accountField.setText("");
+        comboMusicBox.setValue("CHOOSE ONE");
+        appButton.setSelected(true);
+        prodButton.setSelected(false);
+        eduButton.setSelected(false);
+        appButton.setSelected(false);
+        musicButton.setSelected(false);
+        appButton.setDisable(false);
+        musicButton.setDisable(false);
+        clearDisabled();
+    }
+
     @FXML
     public void handleFinish() {
         System.exit(0);
